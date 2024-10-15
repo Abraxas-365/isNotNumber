@@ -1,4 +1,4 @@
-declare module "is-not-number" {
+declare module "isnt-number" {
   function isNotNumber(value: any): boolean;
   function isEmojiNotANumber(value: any): boolean;
 
