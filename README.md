@@ -2,6 +2,8 @@
 
 A npm package that gives you a function that returns true if the input is not a number.
 
+It's a new approach for everyone who thinks differently!
+
 ## Installation
 
 You can install the package via npm:
@@ -17,11 +19,13 @@ npm install isnt-number
 Here's how to use `isnt-number` in a JavaScript file:
 
 ```javascript
-const isNotNumber = require("isnt-number");
+const isntNumber = require("isnt-number");
 
 console.log(isNotNumber("hello")); // true
 console.log(isNotNumber(123)); // false
+console.log(!isNotNumber(123)); // true, like isNumber >.<
 console.log(isNotNumber(NaN)); // true
+console.log(!isNotNumber(NaN)); // false
 ```
 
 ### TypeScript
@@ -43,17 +47,4 @@ To use `isnt-number` in a TypeScript file, follow these steps:
 3. Use the function in your TypeScript code:
 
 ```typescript
-import isNotNumber from "isnt-number";
-
-console.log(isNotNumber("hello")); // true
-console.log(isNotNumber(123)); // false
-console.log(!isNotNumber(123)); // true
-console.log(isNotNumber(NaN)); // true
-```
-
-## API
-
-### `isNotNumber(value: any): boolean`
-
-- **value**: The value to check.
-- **Returns**: `true` if the value is not a number, otherwise `false`.
+import isntNumber from "isnt-number";
