@@ -47,6 +47,7 @@ import isNotNumber from "isnt-number";
 
 console.log(isNotNumber("hello")); // true
 console.log(isNotNumber(123)); // false
+console.log(!isNotNumber(123)); // true
 console.log(isNotNumber(NaN)); // true
 ```
 
