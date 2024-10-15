@@ -1,18 +1,6 @@
 {
   "name": "isnt-number",
-<<<<<<< Updated upstream
   "version": "1.0.9",
-=======
-<<<<<<< Updated upstream
-  "version": "1.0.8",
-=======
-<<<<<<< Updated upstream
-  "version": "1.0.6",
-=======
-  "version": "1.0.5",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   "description": "A simple function that returns true if the input is not a number",
   "main": "index.js",
   "types": "index.d.ts",
