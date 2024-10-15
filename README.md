@@ -1,6 +1,10 @@
 # isNotNumber
 
-A npm package that gives you functions to check if inputs are not numbers or not number emojis.
+A npm package that gives you a function that returns true if the input is not a number.
+
+It's a new approach for everyone who thinks differently!
+
+It's a new approach for everyone who thinks differently!
 
 ## Installation
 
@@ -21,6 +25,7 @@ const { isNotNumber, isNotNumberEmoji } = require("isnt-number");
 
 console.log(isNotNumber("hello")); // true
 console.log(isNotNumber(123)); // false
+console.log(!isNotNumber(123)); // true, like isNumber >.<
 console.log(isNotNumber(NaN)); // true
 
 console.log(isNotNumberEmoji('A')); // true
