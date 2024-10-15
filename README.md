@@ -75,6 +75,11 @@ console.log(isEmojiNotNumber("1️⃣")); // false
 - **value**: The value to check.
 - **Returns**: `true` if the value is not a number emoji, otherwise `false`.
 
+### `isNotNumberEmoji(value: any): string`
+
+- **value**: The value to check.
+- **Returns**: `🙂` if the value is not a number, otherwise `🙁`.
+
 ## Number Emojis
 
 The `isEmojiNotNumber` function checks for the following types of number emojis:
