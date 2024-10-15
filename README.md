@@ -21,11 +21,11 @@ Here's how to use `isnt-number` in a JavaScript file:
 ```javascript
 const isntNumber = require("isnt-number");
 
-console.log(isntNumber("hello")); // true
-console.log(isntNumber(123)); // false
-console.log(!isntNumber(123)); // true, like isNumber >.<
-console.log(isntNumber(NaN)); // true
-console.log(!isntNumber(NaN)); // false
+console.log(isNotNumber("hello")); // true
+console.log(isNotNumber(123)); // false
+console.log(!isNotNumber(123)); // true, like isNumber >.<
+console.log(isNotNumber(NaN)); // true
+console.log(!isNotNumber(NaN)); // false
 ```
 
 ### TypeScript
@@ -49,11 +49,11 @@ To use `isnt-number` in a TypeScript file, follow these steps:
 ```typescript
 import isntNumber from "isnt-number";
 
-console.log(isntNumber("hello")); // true
-console.log(isntNumber(123)); // false
-console.log(!isntNumber(123)); // true, like isNumber >.<
-console.log(isntNumber(NaN)); // true
-console.log(!isntNumber(NaN)); // false
+console.log(isNotNumber("hello")); // true
+console.log(isNotNumber(123)); // false
+console.log(!isNotNumber(123)); // true, like isNumber >.<
+console.log(isNotNumber(NaN)); // true
+console.log(!isNotNumber(NaN)); // false
 ```
 
 ## API
