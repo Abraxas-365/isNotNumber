@@ -3,10 +3,17 @@
   "version": "1.0.2",
   "description": "A simple function that returns true if the input is not a number",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": "number,type,check,is-not,opposite",
+  "keywords": [
+    "number",
+    "type",
+    "check",
+    "is-not",
+    "opposite"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
