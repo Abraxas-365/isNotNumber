@@ -11,5 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "is-number": "^7.0.0"
-  }
+  },
+  "repository": {
+    "url": "https://github.com/Abraxas-365/isNotNumber.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/Abraxas-365/isNotNumber#readme"
 }
