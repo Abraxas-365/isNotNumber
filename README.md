@@ -1,9 +1,6 @@
 # isNotNumber
 
 A npm package that gives you a function that returns true if the input is not a number.
-
-It's a new approach for everyone who thinks differently!
-
 It's a new approach for everyone who thinks differently!
 
 ## Installation
