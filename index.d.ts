@@ -19,4 +19,11 @@ declare module "isnt-number" {
    * @returns A smiling face emoji if the value is a number, a frowning face emoji otherwise.
    */
   export function isNotNumberEmoji(value: any): string;
+
+  /**
+   * Checks if the given value is not a number and returns the result in Spanish.
+   * @param value The value to check.
+   * @returns "verdadero" if the value is not a number, "falso" if it is a number.
+   */
+  export function isNotNumberSpanish(value: any): "falso" | "verdadero";
 }
