@@ -1,6 +1,6 @@
 {
   "name": "isnt-number",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A simple function that returns true if the input is not a number",
   "main": "index.js",
   "types": "index.d.ts",
