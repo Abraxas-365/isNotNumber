@@ -11,7 +11,7 @@ declare module "isnt-number" {
    * @param value The value to check.
    * @returns True if the value is not a number emoji, false otherwise.
    */
-  export function isEmojiNotANumber(value: any): boolean;
+  export function isEmojiNotNumber(value: any): boolean;
 
   /**
    * Returns an emoji based on whether the input is not a number.

@@ -5,7 +5,7 @@ function isNotNumber(value) {
   return ~isNumber(value) & 1;
 }
 
-function isEmojiNotANumber(value) {
+function isEmojiNotNumber(value) {
   if (typeof value !== "string" || value.length !== 1) {
     return true; // If it's not a single-character string, it's definitely not a number emoji
   }
@@ -36,11 +36,11 @@ function isEmojiNotANumber(value) {
 }
 
 function isNotNumberEmoji(value) {
-  return ~isNumber(value) & 1 ? '🙁' : '🙂';
+  return ~isNumber(value) & 1 ? "🙁" : "🙂";
 }
 
 module.exports = {
   isNotNumber,
-  isEmojiNotANumber,
-  isNotNumberEmoji
+  isEmojiNotANumber: isEmojiNotNumber,
+  isNotNumberEmoji,
 };

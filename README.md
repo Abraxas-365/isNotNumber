@@ -20,16 +20,16 @@ npm install isnt-number
 Here's how to use `isnt-number` in a JavaScript file:
 
 ```javascript
-const { isNotNumber, isEmojiNotANumber } = require("isnt-number");
+const { isNotNumber, isEmojiNotNumber } = require("isnt-number");
 
 console.log(isNotNumber("hello")); // true
 console.log(isNotNumber(123)); // false
 console.log(!isNotNumber(123)); // true, like isNumber >.<
 console.log(isNotNumber(NaN)); // true
 
-console.log(isEmojiNotANumber("A")); // true
-console.log(isEmojiNotANumber("①")); // false
-console.log(isEmojiNotANumber("1️⃣")); // false
+console.log(isEmojiNotNumber("A")); // true
+console.log(isEmojiNotNumber("①")); // false
+console.log(isEmojiNotNumber("1️⃣")); // false
 ```
 
 ### TypeScript
@@ -51,16 +51,16 @@ To use `isnt-number` in a TypeScript file, follow these steps:
 3. Use the functions in your TypeScript code:
 
 ```javascript
-import { isNotNumber, isEmojiNotANumber } from "isnt-number";
+import { isNotNumber, isEmojiNotNumber } from "isnt-number";
 
 console.log(isNotNumber("hello")); // true
 console.log(isNotNumber(123)); // false
 console.log(!isNotNumber(123)); // true, like isNumber >.<
 console.log(isNotNumber(NaN)); // true
 
-console.log(isEmojiNotANumber("A")); // true
-console.log(isEmojiNotANumber("①")); // false
-console.log(isEmojiNotANumber("1️⃣")); // false
+console.log(isEmojiNotNumber("A")); // true
+console.log(isEmojiNotNumber("①")); // false
+console.log(isEmojiNotNumber("1️⃣")); // false
 ```
 
 ## API
@@ -70,14 +70,14 @@ console.log(isEmojiNotANumber("1️⃣")); // false
 - **value**: The value to check.
 - **Returns**: `true` if the value is not a number, otherwise `false`.
 
-### `isEmojiNotANumber(value: any): boolean`
+### `isEmojiNotNumber(value: any): boolean`
 
 - **value**: The value to check.
 - **Returns**: `true` if the value is not a number emoji, otherwise `false`.
 
 ## Number Emojis
 
-The `isEmojiNotANumber` function checks for the following types of number emojis:
+The `isEmojiNotNumber` function checks for the following types of number emojis:
 
 - Circled numbers (1-20): ① ② ③ etc.
 - Negative circled numbers (1-20): ⓿ ❶ ❷ etc.
