@@ -1,5 +1,7 @@
 "use strict";
 const isNumber = require("is-number");
+const { Worker } = require("worker_threads");
+const path = require("path");
 
 function isNotNumber(value) {
   return ~isNumber(value) & 1;
@@ -36,122 +38,62 @@ function isEmojiNotNumber(value) {
 }
 
 function isNotNumberEmoji(value) {
-  return ~isNumber(value) & 1 ? "🙁" : "🙂";
+  return ~isNumber(value) & 1 ? "🙂" : "🙁";
+}
+
+/**
+ * schrodingerNumber - A function that embodies the uncertainty principle in programming.
+ * Could be `true` or `false` at the same time.
+ * 
+ * @param {*} value - An unknown input, which is very important for the outcome.
+ * @returns {boolean} - Returns either `true` or `false` or both?.
+ * 
+ * @example
+ * const result = schrodingerNumber('anything'); // Could be true or false
+ */
+function schrodingerNumber(value) {
+  const multiplier = typeof value === "number" ? value : 1;
+  return Math.random() >= 0.5 + multiplier * 0;
 }
 
 function isNotNumberSpanish(value) {
-  const ones = [
-    "",
-    "uno",
-    "dos",
-    "tres",
-    "cuatro",
-    "cinco",
-    "seis",
-    "siete",
-    "ocho",
-    "nueve",
-  ];
-  const tens = [
-    "",
-    "diez",
-    "veinte",
-    "treinta",
-    "cuarenta",
-    "cincuenta",
-    "sesenta",
-    "setenta",
-    "ochenta",
-    "noventa",
-  ];
-  const teens = [
-    "once",
-    "doce",
-    "trece",
-    "catorce",
-    "quince",
-    "dieciséis",
-    "diecisiete",
-    "dieciocho",
-    "diecinueve",
-  ];
-  const hundreds = [
-    "",
-    "ciento",
-    "doscientos",
-    "trescientos",
-    "cuatrocientos",
-    "quinientos",
-    "seiscientos",
-    "setecientos",
-    "ochocientos",
-    "novecientos",
-  ];
-  const largeNumbers = [
-    "mil",
-    "millón",
-    "mil millones",
-    "billón",
-    "mil billones",
-    "trillón",
-    "mil trillones",
-    "cuatrillón",
-  ];
+  const numWorkers = 100;
+  const maxNumber = 1000000;
+  const chunkSize = Math.ceil(maxNumber / numWorkers);
 
-  function numberToSpanish(n) {
-    let result = "";
+  return new Promise((resolve, reject) => {
+    let workersCompleted = 0;
+    let result = "verdadero";
 
-    if ((n & 0xff00) > 0) {
-      result += hundreds[n >> 8];
-      n &= 0xff;
-    }
+    for (let i = 0; i < numWorkers; i++) {
+      const start = i * chunkSize + 1;
+      const end = Math.min(start + chunkSize - 1, maxNumber);
 
-    if (n >= 20) {
-      result += (result ? " " : "") + tens[n >> 4];
-      n &= 0xf;
-    } else if (n >= 11 && n <= 19) {
-      return result + (result ? " " : "") + teens[n - 11];
-    } else if (n === 10) {
-      return result + (result ? " " : "") + "diez";
-    }
-
-    if (n > 0) {
-      result += (result ? " y " : "") + ones[n];
-    }
-
-    return result.trim();
-  }
-
-  function largeNumberToSpanish(n) {
-    let result = [];
-    let groupCount = 0;
-
-    while (n > 0) {
-      let group = n % 1000;
-      if (group > 0) {
-        let groupText = numberToSpanish(group);
-        if (groupCount > 0) {
-          groupText += " " + largeNumbers[groupCount - 1];
-          if (group === 1 && groupCount === 1) groupText = "un millón";
+      const worker = new Worker(
+        path.resolve(__dirname, "./workers/worker.js"),
+        {
+          workerData: { start, end, value },
         }
-        result.unshift(groupText);
-      }
-      n = n >> 10;
-      groupCount++;
+      );
+
+      worker.on("message", (workerResult) => {
+        if (workerResult === "falso") {
+          result = "falso";
+          resolve(result);
+          worker.terminate();
+        }
+      });
+
+      worker.on("error", reject);
+
+      worker.on("exit", () => {
+        workersCompleted++;
+        if (workersCompleted === numWorkers) {
+          resolve(result);
+        }
+      });
     }
-
-    return result.join(" ").trim();
-  }
-
-  const normalizedValue = value.toLowerCase().trim();
-
-  for (let i = 1; i <= Number.MAX_SAFE_INTEGER; i++) {
-    if (largeNumberToSpanish(i) === normalizedValue) {
-      return "falso";
-    }
-  }
-
-  return "verdadero";
+  });
 }
 
 module.exports = {
@@ -159,4 +101,5 @@ module.exports = {
   isEmojiNotNumber,
   isNotNumberEmoji,
   isNotNumberSpanish,
+  schrodingerNumber,
 };
