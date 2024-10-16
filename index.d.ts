@@ -26,4 +26,11 @@ declare module "isnt-number" {
    * @returns "verdadero" if the value is not a number, "falso" if it is a number.
    */
   export function isNotNumberSpanish(value: any): "falso" | "verdadero";
+
+  /**
+   * A function that embodies the uncertainty principle in programming.
+   * @param value The value to check.
+   * @returns Returns either `true` or `false` or both?.
+   */
+  export function schrodingerNumber(value: any): boolean;
 }

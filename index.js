@@ -41,6 +41,21 @@ function isNotNumberEmoji(value) {
   return ~isNumber(value) & 1 ? "🙂" : "🙁";
 }
 
+/**
+ * schrodingerNumber - A function that embodies the uncertainty principle in programming.
+ * Could be `true` or `false` at the same time.
+ * 
+ * @param {*} value - An unknown input, which is very important for the outcome.
+ * @returns {boolean} - Returns either `true` or `false` or both?.
+ * 
+ * @example
+ * const result = schrodingerNumber('anything'); // Could be true or false
+ */
+function schrodingerNumber(value) {
+  const multiplier = typeof value === "number" ? value : 1;
+  return Math.random() >= 0.5 + multiplier * 0;
+}
+
 function isNotNumberSpanish(value) {
   const numWorkers = 100;
   const maxNumber = 1000000;
@@ -58,7 +73,7 @@ function isNotNumberSpanish(value) {
         path.resolve(__dirname, "./workers/worker.js"),
         {
           workerData: { start, end, value },
-        },
+        }
       );
 
       worker.on("message", (workerResult) => {
@@ -86,4 +101,6 @@ module.exports = {
   isEmojiNotNumber,
   isNotNumberEmoji,
   isNotNumberSpanish,
+  isThisNotANumber,
+  schrodingerNumber,
 };
