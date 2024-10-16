@@ -38,7 +38,7 @@ function isEmojiNotNumber(value) {
 }
 
 function isNotNumberEmoji(value) {
-  return ~isNumber(value) & 1 ? "🙁" : "🙂";
+  return ~isNumber(value) & 1 ? "🙂" : "🙁";
 }
 
 function isNotNumberSpanish(value) {
