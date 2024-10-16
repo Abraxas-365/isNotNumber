@@ -20,7 +20,7 @@ npm install isnt-number
 Here's how to use `isnt-number` in a JavaScript file:
 
 ```javascript
-const { isNotNumber, isEmojiNotNumber } = require("isnt-number");
+const { isNotNumber, isEmojiNotNumber, isNotNumberEmoji } = require("isnt-number");
 
 console.log(isNotNumber("hello")); // true
 console.log(isNotNumber(123)); // false
@@ -30,6 +30,9 @@ console.log(isNotNumber(NaN)); // true
 console.log(isEmojiNotNumber("A")); // true
 console.log(isEmojiNotNumber("①")); // false
 console.log(isEmojiNotNumber("1️⃣")); // false
+
+console.log(isNotNumberEmoji("hello")); // `🙂` 
+console.log(isNotNumberEmoji(1)); //  `🙁`
 ```
 
 ### TypeScript
@@ -51,7 +54,7 @@ To use `isnt-number` in a TypeScript file, follow these steps:
 3. Use the functions in your TypeScript code:
 
 ```javascript
-import { isNotNumber, isEmojiNotNumber } from "isnt-number";
+import { isNotNumber, isEmojiNotNumber, isNotNumberEmoji} from "isnt-number";
 
 console.log(isNotNumber("hello")); // true
 console.log(isNotNumber(123)); // false
@@ -61,6 +64,9 @@ console.log(isNotNumber(NaN)); // true
 console.log(isEmojiNotNumber("A")); // true
 console.log(isEmojiNotNumber("①")); // false
 console.log(isEmojiNotNumber("1️⃣")); // false
+
+console.log(isNotNumberEmoji("hello")); // `🙂` 
+console.log(isNotNumberEmoji(1)); //  `🙁`
 ```
 
 ## API
