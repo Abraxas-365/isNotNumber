@@ -101,6 +101,5 @@ module.exports = {
   isEmojiNotNumber,
   isNotNumberEmoji,
   isNotNumberSpanish,
-  isThisNotANumber,
   schrodingerNumber,
 };
