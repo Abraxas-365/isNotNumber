@@ -29,8 +29,8 @@ console.log(isEmojiNotNumber("A")); // true
 console.log(isEmojiNotNumber("①")); // false
 console.log(isEmojiNotNumber("1️⃣")); // false
 
-console.log(isNotNumberEmoji("hello")); // `🙂` 
-console.log(isNotNumberEmoji(1)); //  `🙁`
+console.log(isNotNumberEmoji("hello")); // 🙂 
+console.log(isNotNumberEmoji(1)); //  🙁
 ```
 
 ### TypeScript
@@ -63,8 +63,8 @@ console.log(isEmojiNotNumber("A")); // true
 console.log(isEmojiNotNumber("①")); // false
 console.log(isEmojiNotNumber("1️⃣")); // false
 
-console.log(isNotNumberEmoji("hello")); // `🙂` 
-console.log(isNotNumberEmoji(1)); //  `🙁`
+console.log(isNotNumberEmoji("hello")); // 🙂 
+console.log(isNotNumberEmoji(1)); //  🙁
 ```
 
 ## API
